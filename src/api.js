@@ -1,6 +1,7 @@
 const express = require("express");
 const serverless = require("serverless-http");
-
+const handle = require('./handlers/index');
+const routes = require('./routes');
 const app = express();
 const router = express.Router();
 
