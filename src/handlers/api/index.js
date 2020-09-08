@@ -1,8 +1,11 @@
+const axios = require('axios');
+
 exports.getRandomUser = async (req, res, next) => {
     try {
-        const list = ["some", "list"]//await db.StoreList.distinct("stateName");
-
-        return res.status(200).json({"stateList": list})
+        
+        const user = await axios.get('https://randomuser.me/api/');
+        console.log(user.data.results[0]);
+        return res.status(200).json({"randoUser": user.data.results[0]})
     }
 
     catch (err) {
